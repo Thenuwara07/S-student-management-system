@@ -1,6 +1,6 @@
 <?php
 
-    // home controller
+    // login controller
     class Login extends Controller{
 
         function index(){

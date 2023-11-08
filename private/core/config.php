@@ -1,3 +1,3 @@
 <?php
 
-    define('ROOT', 'http://localhost/school/public');
+    define('ROOT', 'http://localhost/S-student-management-system/public');
