@@ -5,8 +5,9 @@
  */
 class Model extends Database
 {
+	public $errors = array();
 
-	function __construct()
+	public function __construct()
 	{
 		if(!property_exists($this, 'table')){
             $this->table = strtolower  ($this::class) . "s";
@@ -41,24 +42,27 @@ class Model extends Database
 		return $this->query($query,$data);
 	}
 
-    public function update($data)
+    public function update($id,$data)
 	{
-        $column = addslashes($column);
-		$query = "select * from $this->table where $column = :value";
-        echo $query;
-		return $this->query($query,[
-			'value'=>$value
-		]);
+        
+		$str = "";
+		foreach ($data as $key => $value){
+			$str .= $key. "=:" . $key. ",";
+		}
+
+		$str = trim($str,",");
+		$data['id'] = $id;
+		$query = "update $this->table set $str where id = :id";
+		return $this->query($query,$data);
 	}
 
-    public function delete($column,$value)
+    public function delete($id)
 	{
-        $column = addslashes($column);
-		$query = "select * from $this->table where $column = :value";
-        echo $query;
-		return $this->query($query,[
-			'value'=>$value
-		]);
+
+
+        $query = "delete from $this->table where id = :id";
+		$data['id'] = $id; 
+		return $this->query($query,$data);
 	}
 
 	

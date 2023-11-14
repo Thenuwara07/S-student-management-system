@@ -1,5 +1,11 @@
 <style>
-	nav ul li a:hover{
+	nav ul li a{
+		width: 120px;
+    text-align: center;
+    border-left: solid thin #ddd;
+    border-right: solid thin #eee;
+	}
+  nav ul li a:hover{
 		background-color: grey;
 		color: white !important;
 	}
@@ -27,7 +33,8 @@
       <li class="nav-item">
         <a class="nav-link" href="<?=ROOT?>/tests">TESTS</a>
       </li>
-
+    </ul>
+    <ul class="navbar-nav mx-auto">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           USER
