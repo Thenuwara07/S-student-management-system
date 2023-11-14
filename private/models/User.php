@@ -50,10 +50,13 @@
 
             //chech for password
             if(empty($DATA['password']) && empty($DATA['password2'])){
-                $this->errors[]="Please enter password and try again";
+                $this->errors['password']="Please enter password and try again";
             }
             elseif($DATA['password'] != $DATA['password2']){
-                $this->errors[]="The password do not match";
+                $this->errors['password']="The password do not match";
+            }
+            elseif(strlen($DATA['password'])<=7){
+                $this->errors['password']="Password must be at least 8 characters long";
             }
 
             if (count($this->errors)==0){
