@@ -1,8 +1,4 @@
 <?php $this->view('includes/v_header') ?>
-
-<?php
-    print_r($errors);
-?>
         
 <div class="container-fluid">
     <form method="post">
@@ -10,6 +6,16 @@
         <h2 style="text-align: center;">School</h2>
         <img src="<?=ROOT?>/assets/logo2.jpg" class="border border-primary d-block mx-auto rounded-circle" style="height: 150px;">
         <h3>Add user</h3>
+    <?php if (count($errors)>0): ?>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Errors:</strong>
+            <?php foreach($errors as $error): ?>
+            <Br> <?=$error?>
+            <?php endforeach; ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <?php endif; ?>
+
         <input class="my-3 form-control" value="<?=get_var('firstname')?>" type="firstname" name="firstname" placeholder="First Name">
         <input class="my-3 form-control" value="<?=get_var('lasttname')?>" type="lastname" name="lastname" placeholder="Last Name">
         <input class="my-3 form-control" value="<?=get_var('email')?>" type="email" name="email" placeholder="Email">
