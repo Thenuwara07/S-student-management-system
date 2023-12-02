@@ -24,7 +24,13 @@
         <a class="nav-link active" href="<?=ROOT?>">DASHBOARD</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?=ROOT?>/users">USERS</a>
+        <a class="nav-link" href="<?=ROOT?>/schools">SCHOOLS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?=ROOT?>/users">STAFF</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?=ROOT?>/students">STUDENTS</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<?=ROOT?>/classes">CLASSES</a>
@@ -37,7 +43,7 @@
     <ul class="navbar-nav mx-auto">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          USER
+          <?=Auth::getFirstname()?>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="<?=ROOT?>/profile">Profile</a>

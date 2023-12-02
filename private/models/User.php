@@ -47,6 +47,11 @@
                 $this->errors['email']="Email is not valid";
             }
 
+            // check if email exists
+            elseif($this->where('email',$DATA['email'])){
+                $this->errors['email']="That email is already use.";
+            }
+
             //chech for gender
             $genders = ['female','male'];
             if(empty($DATA['gender'])){
@@ -87,10 +92,6 @@
             $array = array(0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f','g','h','i','j','k','l','m','n');
             $text = "";
 
-            for($x = 0; $x < $length; $x++){
-                $random = rand(0,61);
-                $text .= $array[$random];
-            }
 
             return $text;
         }
