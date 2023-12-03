@@ -16,6 +16,6 @@ class Schools extends Controller
         $school = new School();
 		$data = $school->findAll();
 
-		$this->view('schools',['rows'=>$data]);
+		$this->view('v_schools',['rows'=>$data]);
 	}
 }

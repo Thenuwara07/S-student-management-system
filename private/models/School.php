@@ -34,15 +34,13 @@
 
         public function make_user_id($data){
             
-            $data['user_id'] = $this->random_string(60);
+            $data['user_id'] = random_string(60);
             return $data;
         }
 
         public function make_school_id($data){
             
-            if(isset($_SESSION['USER']->school_id)){
-                $data['school_id'] = $_SESSION['USER']->school_id;
-            }
+            $data['school_id'] = random_string(60);
             return $data;
         }
 
